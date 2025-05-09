@@ -11,11 +11,11 @@
     data: () => ({
       selected: 1,
       options: [
-        { id: 1, icon: 'fa-solid fa-bolt', title: 'Hjem' },
-        { id: 2, icon: 'fa-solid fa-magnifying-glass', title: 'Scanner' },
-        { id: 3, icon: 'fa-solid fa-plus', title: 'Pointshop' },
-        { id: 4, icon: 'fas fa-bell', title: 'Udfordringer' },
-        { id: 5, icon: 'fa-solid fa-gear', title: 'Profil' }
+        { id: 1, icon: 'fas fa-house', title: 'Hjem' },
+        { id: 2, icon: 'fas fa-barcode', title: 'Scanner' },
+        { id: 3, icon: 'fas fa-gift', title: 'Pointshop' },
+        { id: 4, icon: 'fas fa-trophy', title: 'Udfordringer' },
+        { id: 5, icon: 'fas fa-user', title: 'Profil' }
       ]
     }),
   };
