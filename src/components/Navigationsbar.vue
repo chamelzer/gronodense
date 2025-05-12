@@ -19,7 +19,7 @@ export default {
       selected: 0,
       options: [
         { id: 0, icon: 'fas fa-house', title: 'Hjem', route: '/hjem' },
-        { id: 1, icon: 'fas fa-barcode', title: 'Sorter', route: '/sorteringsguide' },
+        { id: 1, icon: 'fas fa-recycle', title: 'Sorter', route: '/sorteringsguide' },
         { id: 2, icon: 'fas fa-gift', title: 'Pointshop', route: '/pointshop' },
         { id: 3, icon: 'fas fa-trophy', title: 'Leaderboard', route: '/leaderboard' },
         { id: 4, icon: 'fas fa-user', title: 'Profil', route: '/profil' }
