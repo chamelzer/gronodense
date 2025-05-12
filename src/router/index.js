@@ -5,6 +5,7 @@ import Pointshop from '@/views/Pointshop.vue'
 import Profil from '@/views/Profil.vue'
 import Scanner from '@/views/Scanner.vue'
 import Sorteringsguide from '@/views/Sorteringsguide.vue'
+import Leaderboard from '@/views/Leaderboard.vue'
 
 const routes = [
   {
@@ -37,6 +38,12 @@ const routes = [
     name: 'Sorteringsguide',
     component: Sorteringsguide,
   },
+
+  {
+    path: '/leaderboard',
+    name: 'Leaderboard',
+    component: Leaderboard,
+  }
 ]
 
 const router = createRouter({
