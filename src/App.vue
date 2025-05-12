@@ -12,3 +12,4 @@ import Navigationsbar from '@/components/Navigationsbar.vue'
 
 defineProps({ icon: FontAwesomeIcon });
 </script>
+

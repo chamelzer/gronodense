@@ -1,10 +1,17 @@
 @import '@fortawesome/fontawesome-free/css/all.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import './base.css';
 
+body {
+  background-color: #F7F3EC; /* Baggrundsfarve for hele siden */
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
 #app {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding-bottom: 80px; /* Plads til navigationen */
   font-weight: normal;
 }
 
@@ -22,15 +29,17 @@ a,
   }
 }
 
+/* Fjern grid layout på større skærme */
 @media (min-width: 1024px) {
   body {
-    display: flex;
-    place-items: center;
+    margin: 0;
+    padding: 0;
+    display: block; /* Fjern flex eller ændr layout til blok */
   }
 
   #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+    max-width: 100%;
+    padding: 0;
+    display: block; /* Fjern grid */
   }
 }

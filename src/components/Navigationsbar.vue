@@ -1,24 +1,25 @@
 <template>
-  <SwipeBottomNavigation :options="options" v-model="selected" />
+  <nav class="bottom-nav">
+    <div
+      v-for="option in options"
+      :key="option.id"
+      :class="['nav-item', { active: selected === option.id }]"
+      @click="navigate(option)"
+    >
+      <i :class="option.icon"></i>
+      <span>{{ option.title }}</span>
+    </div>
+  </nav>
 </template>
 
 <script>
-import { SwipeBottomNavigation } from "bottom-navigation-vue";
-import "bottom-navigation-vue/dist/style.css";
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'; // Importér FontAwesomeIcon
-import { useRouter } from 'vue-router'; // Brug Vue Router
-
 export default {
-  components: {
-    SwipeBottomNavigation,
-    FontAwesomeIcon, // Registrér FontAwesomeIcon som en komponent
-  },
   data() {
     return {
-      selected: 0, // Startværdi – vigtig at den matcher en ID
+      selected: 0,
       options: [
         { id: 0, icon: 'fas fa-house', title: 'Hjem', route: '/hjem' },
-        { id: 1, icon: 'fas fa-recycle', title: 'Sorter', route: '/sorteringsguide' },
+        { id: 1, icon: 'fas fa-barcode', title: 'Sorter', route: '/sorteringsguide' },
         { id: 2, icon: 'fas fa-gift', title: 'Pointshop', route: '/pointshop' },
         { id: 3, icon: 'fas fa-trophy', title: 'Leaderboard', route: '/leaderboard' },
         { id: 4, icon: 'fas fa-user', title: 'Profil', route: '/profil' }
@@ -26,23 +27,43 @@ export default {
     };
   },
   methods: {
-    // Metode til at håndtere navigation via router
-    navigateTo(route) {
-      this.$router.push(route); 
-    }
-  },
-  watch: {
-    // Watcher til at opdatere routeren ved ændring af den valgte navigation
-    selected(newVal) {
-      const selectedOption = this.options.find(option => option.id === newVal);
-      if (selectedOption && selectedOption.route) {
-        this.navigateTo(selectedOption.route); // Naviger til den valgte rute
-      }
+    navigate(option) {
+      this.selected = option.id;
+      this.$router.push(option.route);
     }
   }
 };
 </script>
 
 <style scoped>
-/* Styling for navigationsbaren */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #F7F3EC;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-top: 1px solid #ccc;
+  z-index: 1000;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #858489;
+  font-size: 0.75rem;
+  flex: 1;
+}
+
+.nav-item i {
+  font-size: 1.4rem;
+  margin-bottom: 0.2rem;
+}
+
+.nav-item.active {
+  color: #02382C;
+}
 </style>
